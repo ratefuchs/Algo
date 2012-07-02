@@ -1,0 +1,30 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+
+\newcommand{\rbt}{Rot-Schwarz-Baum }
+
+\begin{document}
+\section*{Aufgaben zum Thema Rot-Schwarz-Bäume}
+\begin{enumerate}[(1)]
+
+\item Schreibe die Methode $bh(x,T)$, die f\"ur jeden Knoten $x$ seine Schwarzh\"ohe zur\"uckgibt.
+
+\item Schreibe eine Methode $check\_b\_r\_tree(T)$, die einen \rbt als Parameter nimmt und \"uberpr\"uft, ob dieser ein g\"ultiger \rbt ist.
+
+\item \begin{enumerate}[(a)]
+\item Ein \rbt habe die H\"ohe $h$. Berechne die maximale Differenz zwischen Entfernungen von der Wurzel zu den NIL-Knoten (mit kurzer Begr\"undung).
+\item Konstruiere einen solchen \rbt f\"ur $h=3$.
+\end{enumerate}
+
+\item \begin{enumerate}[(a)]
+\item Gegeben sei ein \rbt der H\"ohe $h$ mit genau einem roten Knoten. Dieser habe den Abstand $d$ von der Wurzel.
+Berechne f\"ur jedes $n\in \mathbb{N}$ die Anzahl $a(n)$ der NIL-Knoten, die den Abstand $n$ zur Wurzel haben.
+\item Ist es m\"oglich, dass $a(h)=2^h$? Begr\"unde!
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+
+\begin{document}
+\section*{Aufgaben zum Thema Laufzeit}
+\begin{enumerate}[(1)]
+
+\item Gegeben sei ein Datentyp, dessen Elemente bez\"uglich < bzw. > vergleichbar sind. Im folgenden betrachten wir Datenstrukturen f\"ur Elemente dieses Typs.
+\begin{enumerate}[(a)]
+\item Warum l\"asst sich in einem Heap das Minimum nicht in $\Theta(1)$ entfernen, so dass die entstehende Struktur immer noch ein Heap ist? \newline
+Tipp: Analysieren Sie die Laufzeit des sich ergebenden Heapsorts.
+\item Geben Sie eine Datenstruktur an, die die entsprechende Eigenschaft aus (a) hat.
+\item Warum ist dies kein Widerspruch zur \"Uberlegung aus (a)?
+\end{enumerate}
+
+\item L\"osen Sie folgende Rekurrenzgleichungen:
+\begin{enumerate}[(a)]
+\item $T(n)=T(\frac{n}{2})+n$
+\item $T(n)=2\cdot T(\frac{n}{2})+1$
+\item $T(n)=T(\frac{n}{2})+1$
+\end{enumerate}
+
+\item Warum l\"asst sich das Mastertheorem nicht auf folgende Gleichungen anwenden?
+\begin{enumerate}[(a)]
+\item $T(n)=T(\frac{n}{2})+\log(n)$
+\item $T(n)=n\cdot T(\frac{n}{2})+1$
+\item $T(n)=T(\frac{n}{2})+n\cdot(2-\cos(n))$
+\item $T(n)=T(n)+1$
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
