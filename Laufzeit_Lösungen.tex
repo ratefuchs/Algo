@@ -31,5 +31,21 @@ Wenn $n$ nahe genug bei einer nat\"urlichen Zahl liegt, wird die Regularit\"atsb
 \item Diese Gleichung ist \"uberhaupt nicht l\"osbar, denn $T(n)=T(n)+1\Rightarrow 0=1$: Widerspruch!
 \end{enumerate}
 
+\item \begin{enumerate}[(a)]
+\item Falsch! W\"ahle $f(n)=n, g(n)=2n, h(n)=j(n)=2^n$.
+\item Wahr! Wegen $f\in\Theta(g)$ und $h\in\Theta(j)$ folgt: $\exists a,b\in \mathbb{R}^+, N\in\mathbb{N}$ mit $f(n)\leq a\cdot g(n)$ und $h(n)\leq b\cdot j(n)$ f\"ur $n\geq N$. Nun gilt:
+$$\underbrace{f(n)}_{\geq 0}\cdot\underbrace{h(n)}_{\geq 0}\leq \underbrace{a\cdot b}_{:=c}\cdot g(n)\cdot j(n)\qquad (n\geq N)$$
+Der Beweis f\"ur die andere Ungleichung l\"auft analog.
+\item Falsch! W\"ahle $f(n)=g(n)=h(n)=n, j(n)\equiv 1$.
+\item Falsch! W\"ahle $f(n)=2^n, g(n)=4^n, h(n)=\lfloor \log_2 n\rfloor$.\newline
+Alternative L\"osung: $h(n)\equiv 1$.
+\item Falsch! W\"ahle $f(n)=2n, g(n)=n, h(n)=2^n$.
+\item Wahr! Wegen $f\in o(g)$ folgt: $\forall a\in\mathbb{R}^+\exists N\in\mathbb{N}: f(n)<a\cdot g(n)$. W\"ahle $a=1\Rightarrow \exists N\in \mathbb{N}:f(n)<g(n)$. Nun gilt aber, da $h$ monoton wachsend:
+$$h(f(n))\leq h(g(n))=1\cdot h(g(n))\qquad (n\geq N)$$
+\item Wahr! $\forall n\in \mathbb{N}_0: n^2\geq n$. Da $f(n)\in\mathbb{N}_0$, folgt automatisch $f(n)\leq (f(n))^2=1\cdot (f(n))^2$.
+\item Falsch! W\"ahle $f(n)\equiv 1$.
+\item Falsch! W\"ahle $f(n)=n$.
+\end{enumerate}
+
 \end{enumerate}
 \end{document}

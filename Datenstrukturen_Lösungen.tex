@@ -1,0 +1,56 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+
+\begin{document}
+\section*{Lösungen zum Thema Laufzeit}
+\begin{enumerate}[(1)]
+
+\item \begin{enumerate}[(a)]
+\item
+\begin{verbatim}
+n=0:  /   n=1:  1    n=2:   1      n=3:      1           1
+                            |               / \         / \
+                            2              2   3       2   3
+                            
+
+n=4:     1          1         1         1         1
+        / \        / \       / \       /         /  
+       2   3      2   4     3   2     2         2
+      /          /         /         / \       / \
+     4          3         4         3   4     4   3
+     
+\end{verbatim}
+\item Alle Heaps f\"ur $n\leq 3$, bei $n=4$ die ersten drei Heaps.
+\item \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+1 & 2 & 6 & 3 & $\bot$ & 8 & 7 & $\bot$ & $\bot$ & $\bot$ & $\bot$ & 9 \\ \hline
+\end{tabular}
+\end{enumerate}
+
+\item 
+Bemerkung: Die L\"osungen h\"angen nat\"urlich von der gew\"ahlten Datenstruktur ab. Dies ist nur eine m\"ogliche L\"osung.
+\begin{enumerate}[(a)]
+\item Doppelt verkettete Liste mit zus\"atzlichem Attribut $min$.
+\item
+\begin{verbatim}
+add(L, x) //füge x in die Liste L ein
+    // hier wäre der Code für das reine Einfügen in die Liste
+    if x < L.min
+    	L.min = x
+    	
+\end{verbatim}
+\item
+\begin{verbatim}
+minimum(L) //gib Minimum aus L zurück
+    return L.min
+    	
+\end{verbatim}
+\item Falls das zu l\"oschende Element das minimale war, muss die komplette Liste nach dem neuen Minimum durchsucht werden. Die Laufzeit ist $\Theta(n)$. Bei einer normalen doppelt verketteten Liste w\"are das L\"oschen (bei Kenntnis des Pointers) aber in konstanter Zeit m\"oglich!
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

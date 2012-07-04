@@ -1,0 +1,31 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\begin{document}
+\section*{Aufgaben zum Thema Laufzeit}
+\begin{enumerate}[(1)]
+
+\item
+\begin{enumerate}[(a)]
+\item Geben sie f\"ur $n\in \{0,1,2,3,4\}$ alle M\"oglichkeiten an, die Zahlen $1,\dots,n$ in einen Min-Heap einzuordnen. Der Heap soll minimale H\"ohe haben und ein rechter Unterbaum darf nicht h\"oher sein als ein linker Unterbaum desselben Knotens.
+\item Welche Heaps aus (a) haben in der Arraydarstellung keine L\"ucken?
+\item Stellen Sie den folgenden Heap als Array dar. Verwenden Sie $\bot$, um L\"ucken zu kennzeichnen:\newline
+{\center\includegraphics[scale=0.3]{Heap.jpg}}
+\end{enumerate}
+
+\item
+Gesucht ist eine Datenstruktur, in der Einf\"ugen in konstanter Zeit ebenso m\"oglich ist wie die R\"uckgabe des minimalen Werts.
+\begin{enumerate}[(a)]
+\item Beschreiben Sie kurz eine m\"ogliche Datenstruktur.
+\item Schreiben Sie Pseudocode f\"ur das Einf\"ugen. Es gen\"ugt, den f\"ur die sp\"atere R\"uckgabe des Minimums relevanten Teil zu betrachten.
+\item Schreiben Sie Pseudocode, der das Minimum zur\"uckgibt.
+\item Beschreiben Sie kurz, was beim Entfernen eines Elements passieren muss. Hat dies Auswirkung auf die Laufzeit des L\"oschens?
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
