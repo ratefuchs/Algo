@@ -1,0 +1,31 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\begin{document}
+\section*{Wissensfragen: Lösungen}
+\begin{enumerate}[(1)]
+
+\item mögliche Lösungen:
+\begin{itemize}
+\item Kruskal: es wird immer die Kante mit dem niedrigsten Gewicht ausgewählt, die Teil eines minimalen Spannbaums sein kann.
+\item Prim: es wird immer die leichteste Kante, die den bisherigen MST mit einem neuen Knoten verbindet, ausgewählt.
+\item Dijkstra: Durch die Verwendung einer Prioritätswarteschlange werden immer die ausgehenden Kanten des Knotens mit der geringsten Distanz relaxiert.
+\end{itemize}
+
+\item mögliche Lösungen
+\begin{itemize}
+\item[(+)] besseres Verhalten im Worst Case
+\item[(+)] stabil
+\item[(-)] im Durchschnitt eher langsamer als Quicksort
+\item[(-)] zusätzlicher Speicher benötigt (nicht in-place)
+\end{itemize}
+
+\item Stabilität bedeutet, dass sich die Reihenfolge von gleichen Elementen beim Sortieren nicht ändern. Anwenden lässt sich diese z.B. bei Tupeln, die lexikographisch geordnet werden (d.h. zuerst nach dem ersten Wert, bei Gleichheit nach dem zweiten). Ein Beispiel hierfür wären Tupel der Form (Monat, Tag) für einen Tag innerhalb eines Jahres. Man sortiert dabei zuerst nach dem zweiten Wert und danach mit einem stabilen Sortieralgorithmus nach dem ersten Wert. Bei Tupeln mit gleicher erster Komponente wird dann nämlich die ursprüngliche Reihenfolge beibehalten, welche durch Sortieren nach der zweiten Komponente erreicht wurde.
+
+\end{enumerate}
+\end{document}
