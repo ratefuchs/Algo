@@ -4,8 +4,13 @@
 \usepackage[ngerman]{babel}
 \usepackage{amsmath,amssymb}
 \usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tabto}
 
 \begin{document}
+% Tab-Positionen
+\TabPositions{0.8cm, 1.6cm, 2.4cm, 3.2cm}
+
 \section*{Lösungen zum Thema Laufzeit}
 \begin{enumerate}[(1)]
 
@@ -59,6 +64,23 @@ minimum(L) //gib Minimum aus L zurück
 \item Lösungsvorschlag: Max-Heap, da hier sowohl die Auswahl des Elements mit dem größten Schlüssel als auch das Einfügen neuer Prozesse hier besonders schnell ($O(log(n)$) erfolgen kann. 
 \end{enumerate}
 
+\item Skizze: \\
+	\includegraphics[width=6cm]{QueueListe}\\
+	Anm: K muss auf den Listenanfang zeigen, da nur hier das Löschen in konstanter Zeit möglich ist.
+\item \textit{ENQUEUE(x)}\\
+	01 \tab \textbf{if} (E == \textit{NIL})\\
+	02 \tab \tab E = x;\\
+	03 \tab \textbf{else\\}
+	04 \tab \tab  E.next = x;\\
+	05 \tab \tab E = E.next;\\
+	\ \\
+	\textit{DEQUEUE()}\\
+	01 \tab \textbf{if} (K == \textit{NIL})\\
+	02 \tab \tab \textbf{error}(''Underflow!'');\\
+	03 \tab \textbf{else}\\
+	04 \tab \tab x = K;\\
+	05 \tab \tab K = K.next;\\
+	06 \tab \tab \textbf{return} x;
 
 \end{enumerate}
 \end{document}

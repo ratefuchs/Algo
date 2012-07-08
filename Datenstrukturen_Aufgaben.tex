@@ -7,7 +7,7 @@
 \usepackage{enumerate}
 
 \begin{document}
-\section*{Aufgaben zum Thema Laufzeit}
+\section*{Aufgaben zum Thema Datenstrukturen}
 \begin{enumerate}[(1)]
 
 \item
@@ -34,6 +34,12 @@ Gesucht ist eine Datenstruktur, in der Einf\"ugen in konstanter Zeit ebenso m\"o
 \item Ein Prozess-Scheduler in einem Betriebssystem arbeitet mit unterschiedlich hohen Prioritäten. Bei jedem Aufruf soll jeweils der Prozess mit der höchsten Priorität ausgeführt werden, wobei die Auswahlgeschwindigkeit für die Leistungsfähigkeit des Betriebssystems eine entscheidende Rolle spielt.
 \end{enumerate}
 
+\item Zeigen Sie, wie eine Warteschlange mit einer \textbf{einfach verketteten} Liste sowie zwei Zeigern \textit{K} (ältestes Element) und \textit{E} (neuestes Element) implementiert werden kann. Hierbei sollen sowohl ENQUEUE(X) als auch DEQUEUE() die Laufzeit O(1) besitzen.\\
+Gehen Sie dafür folgendermaßen vor:\\
+\begin{itemize}
+	\item Stellen Sie mit einer Skizze dar, wie die beiden Zeiger in der Liste positioniert werden müssen.
+	\item Geben Sie den Pseudocode für beide Warteschlangenoperationen an. Stellen  Sie dabei sicher, dass Ihre Implementierung auch korrekt mit einer leeren Warteschlange umgehen kann.
+\end{itemize}
 
 \end{enumerate}
 \end{document}
