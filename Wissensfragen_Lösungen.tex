@@ -27,5 +27,15 @@
 
 \item Stabilität bedeutet, dass sich die Reihenfolge von gleichen Elementen beim Sortieren nicht ändern. Anwenden lässt sich diese z.B. bei Tupeln, die lexikographisch geordnet werden (d.h. zuerst nach dem ersten Wert, bei Gleichheit nach dem zweiten). Ein Beispiel hierfür wären Tupel der Form (Monat, Tag) für einen Tag innerhalb eines Jahres. Man sortiert dabei zuerst nach dem zweiten Wert und danach mit einem stabilen Sortieralgorithmus nach dem ersten Wert. Bei Tupeln mit gleicher erster Komponente wird dann nämlich die ursprüngliche Reihenfolge beibehalten, welche durch Sortieren nach der zweiten Komponente erreicht wurde.
 
+\item Falsch, da bin\"are Suche nicht auf jeder Datenstruktur anwendbar ist: Gegenbeispiel: Verkettete Listen
+
+\item Falsch! Gegenbeispiel f\"ur den Leser.
+
+\item Falsch! Gegenbeispiel, ein Graph bei dem die letzte Kante zum Zielknoten gr\"o\"ser ist als die Summe aller Kantengewichte ohne diese Kante. 
+Der Weg zu dieser Kante f\"uhrt nur \"uber die Kante mit dem eindeutig minimalstem Gewicht.
+
+Dijkstra2 wird diese Kante nie fortf\"uhren und deswegen nicht den l\"angsten Pfad finden.
+
+
 \end{enumerate}
 \end{document}
