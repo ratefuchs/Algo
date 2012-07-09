@@ -1,0 +1,31 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+\section*{Aufgaben zum Thema Sortieren}
+\begin{enumerate}[(1)]
+
+\item Gegebenen sei der Sortieralgorithmus \emph{Cocktail-Sort}. Um ein Array zu sortieren, durchschreitet der Algorithmus den Array zun\"achst von vorne nach hinten und vertauscht dabei zwei benachbarte Werte, wenn sie in der falschen Reihenfolge stehen. Ist der Algorithmus am Ende des Arrays angekommen, durchschreitet er das Array jetzt in umgekehrter Reihenfolge von hinten nach vorne (also \glqq zur\"uck\grqq).
+\begin{enumerate}[(a)]
+\item Wenden Sie Cocktail-Sort auf folgendes Array an. Geben Sie dabei das Array nach jedem Schritt an. \\
+\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+4 & 2 & 1 & 3 & 7 & 3 \\
+\hline
+\end{tabular}
+\end{center}
+\text{ } \\
+\item Geben Sie eine naive Implementierung von \emph{Cocktail-Sort} in Pseudocode an.
+\item Geben Sie eine \emph{Familie} von Zahlenarrays an, die von Bubblesort in $O(n^2)$ sortiert werden, aber von Cocktail-Sort in $O(n)$.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
