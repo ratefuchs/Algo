@@ -35,9 +35,28 @@ n=4:     1          1         1         1         1
 1 & 2 & 6 & 3 & $\bot$ & 8 & 7 & $\bot$ & $\bot$ & $\bot$ & $\bot$ & 9 \\ \hline
 \end{tabular}
 \end{enumerate}
+ \item \begin{enumerate}[(a)]
+ 	\item  Das Element mit dem Schlüssel 18 verletzt die Heap-Eigenschaft, da es kleiner als 26 und 21 ist, aber weiter unten als diese im Heap steht.
+\item \begin{verbatim}
+          12                              12 
+       /       \                       /       \
+     21         19                   21          19
+   /   \       /   \       ->      /   \        /   \
+  26    99    30   24             18     99    30   24
+ / \   /  \                       / \   /  \
+32 18 101 128                    32 26 101 128
 
-\item 
-Bemerkung: Die L\"osungen h\"angen nat\"urlich von der gew\"ahlten Datenstruktur ab. Dies ist nur eine m\"ogliche L\"osung.
+             12 
+         /       \
+       18         19
+->   /   \       /   \
+    21    99    30   24
+   / \   /  \
+  32 26 101 128
+\end{verbatim}
+ \end{enumerate}
+
+\item Bemerkung: Die L\"osungen h\"angen nat\"urlich von der gew\"ahlten Datenstruktur ab. Dies ist nur eine m\"ogliche L\"osung.
 \begin{enumerate}[(a)]
 \item Doppelt verkettete Liste mit zus\"atzlichem Attribut $min$.
 \item
