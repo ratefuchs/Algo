@@ -4,6 +4,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{amsmath,amssymb}
 \usepackage{enumerate}
+\usepackage{graphicx}
 
 \begin{document}
 \section*{Aufgaben zum Thema Graphen}
@@ -35,5 +36,32 @@ E := \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 	\item Geben Sie den Graphen in Adjazenzlistendarstellung an.
 	\item Welche dritte Möglichkeit zur Darstellung von Graphen wurde in der Vorlesung vorgestellt? Beschreiben Sie sie kurz und nennen Sie sowohl einen Vor- als auch einen Nachteil dieser Methode.
 \end{enumerate} 
+
+\item Wenden Sie die Algorithmen von Prim und Kruskal auf den folgenden Graphen an. Markieren Sie die Kanten des resultierenden MSTs eindeutig (z.B. durch dicke Linien) und geben Sie für jeden Algorithmus jeweils die Reihenfolge der hinzugefügten Kanten an.
+%TODO: ist der MST eindeutig bzw. liefern beide Algorithmen überhaupt denselben?
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.66\textwidth]{mst_graph.png}
+\end{figure}
+
+\item Gegeben sei folgender Graph:\\
+\ \\
+\begin{center}
+\includegraphics[width=0.75\linewidth]{images/tiefensuche_aufg}\\
+\end{center}
+Führen Sie auf diesem Graphen eine Tiefensuche aus und gehen Sie dabei wie folgt vor:
+\begin{itemize}
+	\item Beginnen Sie bei Knoten A.
+	\item Die Betrachtung der ausgehenden Kanten eines Knotens soll im Uhrzeigersinn erfolgen
+	\item Schreiben Sie die \textit{discovered}-Zeiten der Knoten links neben die Doppelpunkte, die \textit{finalized}-Zeiten jeweils rechts daneben.
+	\item Klassifzieren Sie die Kanten:
+	\begin{itemize}
+		\item jede \textit{Baumkante} durch eine dicke Linie
+		\item jede \textit{Rückwärtskante} mit einem ''B''
+		\item jede \textit{Vorwärtskante} mit einem ''F''
+		\item jede \textit{Querkante} mit einem ''C''
+	\end{itemize} 
+\end{itemize}
 \end{enumerate}
+
 \end{document}
