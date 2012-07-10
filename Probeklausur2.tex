@@ -147,4 +147,52 @@ Gehen Sie dafür folgendermaßen vor:\\
 \end{center}
 
 \end{enumerate}
+
+\section*{Aufgabe 6: Graphen}
+\begin{enumerate}[(1)]
+\item Ein Graph G = (V,E) sei durch die folgende Adjazenzfelddarstellung gegeben:\\
+\ \\
+V := \begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+1 & 3 & 4 & 6 & 9 & 11 \\ 
+\hline 
+\end{tabular}  \\
+\ \\
+E := \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+2 & 3 & 4 & 2 & 5 & 2 & 3 & 6 & 1 & 6 & 5 \\ 
+\hline 
+\end{tabular}\\
+\begin{enumerate}[(a)]
+	\item Zeichnen Sie den Graphen.
+	\item Geben Sie den Graphen in Adjazenzlistendarstellung an.
+	\item Welche dritte Möglichkeit zur Darstellung von Graphen wurde in der Vorlesung vorgestellt? Beschreiben Sie sie kurz und nennen Sie sowohl einen Vor- als auch einen Nachteil dieser Methode.
+\end{enumerate} 
+
+\item Wenden Sie die Algorithmen von Prim und Kruskal auf den folgenden Graphen an. Markieren Sie die Kanten des resultierenden MSTs eindeutig (z.B. durch dicke Linien) und geben Sie für jeden Algorithmus jeweils die Reihenfolge der hinzugefügten Kanten an.
+%TODO: ist der MST eindeutig bzw. liefern beide Algorithmen überhaupt denselben?
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.66\textwidth]{mst_graph.png}
+\end{figure}
+
+\item Gegeben sei folgender Graph:\\
+\ \\
+\begin{center}
+\includegraphics[width=0.75\linewidth]{images/tiefensuche_aufg}\\
+\end{center}
+Führen Sie auf diesem Graphen eine Tiefensuche aus und gehen Sie dabei wie folgt vor:
+\begin{itemize}
+	\item Beginnen Sie bei Knoten A.
+	\item Die Betrachtung der ausgehenden Kanten eines Knotens soll im Uhrzeigersinn erfolgen
+	\item Schreiben Sie die \textit{discovered}-Zeiten der Knoten links neben die Doppelpunkte, die \textit{finalized}-Zeiten jeweils rechts daneben.
+	\item Klassifzieren Sie die Kanten:
+	\begin{itemize}
+		\item jede \textit{Baumkante} durch eine dicke Linie
+		\item jede \textit{Rückwärtskante} mit einem ''B''
+		\item jede \textit{Vorwärtskante} mit einem ''F''
+		\item jede \textit{Querkante} mit einem ''C''
+	\end{itemize} 
+\end{itemize}
+\end{enumerate}
 \end{document}
