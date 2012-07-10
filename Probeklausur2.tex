@@ -20,6 +20,12 @@
 
 
 \begin{document}
+\begin{center}
+	{\huge \textbf{Algorithmen I} \\
+			\textbf{Übungsklausur}\\
+			\textbf{11.07.2012}}
+\end{center}
+\textbf{Name:}\\
 \section*{Aufgabe 1: Wissensfragen (6 Punkte)}
 \begin{enumerate}[(1)]
 \item Nennen Sie zwei in der Vorlesung vorgestellte Algorithmen, die nach dem Greedy-Prinzip arbeiten. Begründen Sie kurz, warum. (1P)
@@ -28,7 +34,7 @@
 
 \item Was bedeutet Stabilität bei Sortieralgorithmen? Nennen Sie eine Situation, in der man die Stabilität ausnutzen kann. (2P)
 
-\item Zeigen oder widerlegen Sie: Bin\"are Suche hat auf jeder Datenstruktur eine bessere Laufzeit als Lineare Suche - Beweisen oder widerlegen sie diese Aussage. (2P)
+\item Zeigen oder widerlegen Sie: Bin\"are Suche hat auf jeder Datenstruktur eine bessere Laufzeit als Lineare Suche. (2P)
 \end{enumerate}
 
 \section*{Aufgabe 2: Heaps (12 Punkte)}
@@ -58,7 +64,7 @@ Hinweis: Betrachten Sie die Laufzeit einer Heapsort-Implementierung, wenn dies m
 
 \section*{Aufgabe 3: Sortieren (13 Punkte)}
 \begin{enumerate}[(1)]
-\item Gegebenen sei der Sortieralgorithmus \emph{Cocktail-Sort}. Um ein Array zu sortieren, durchschreitet der Algorithmus den Array zun\"achst von vorne nach hinten und vertauscht dabei zwei benachbarte Werte, wenn sie in der falschen Reihenfolge stehen. Ist der Algorithmus am Ende des Arrays angekommen, durchschreitet er das Array jetzt in umgekehrter Reihenfolge von hinten nach vorne (also \glqq zur\"uck\grqq). Dies wird so lange fortgesetzt, bis in einem Durchlauf keine Elemente mehr vertauscht werden.
+\item Gegebenen sei der Sortieralgorithmus \emph{Cocktail-Sort}. Um ein Array zu sortieren, durchschreitet der Algorithmus das Array zun\"achst von vorne nach hinten und vertauscht dabei zwei benachbarte Werte, wenn sie in der falschen Reihenfolge stehen. Ist der Algorithmus am Ende des Arrays angekommen, durchschreitet er das Array jetzt in umgekehrter Reihenfolge von hinten nach vorne (bewegt sich also \glqq wieder zur\"uck\grqq). Dies wird so lange fortgesetzt, bis in einem Durchlauf keine Elemente mehr vertauscht werden.
 \begin{enumerate}[(a)]
 \item Wenden Sie Cocktail-Sort auf folgendes Array an, um die Elemente \textbf{aufsteigend} zu sortieren. Geben Sie dabei das Array nach jedem Schritt an. (3P)
 \\
@@ -105,7 +111,7 @@ Gehen Sie dafür folgendermaßen vor:\\
 	\item Geben Sie den Pseudocode für beide Warteschlangenoperationen an. Stellen  Sie dabei sicher, dass Ihre Implementierung auch korrekt mit einer leeren Warteschlange umgehen kann.
 \end{itemize}
 
-\item Löschen Sie in folgendem Rot-Schwarz-Baum die 17 und zeichenen Sie den reparierten Baum. (5P)
+\item Löschen Sie in folgendem Rot-Schwarz-Baum das Element mit dem Schlüssel 17 und zeichenen Sie den Baum nach Ablauf der Operation. Sie können dabei die schwarzen Knoten durch einen doppelten Kreis kennzeichnen, die roten durch einen einfachen. (5P)\\
 
 \begin{center}
 \begin{tikzpicture}[level 1/.style={level distance = 1.2cm}, level 2/.style={sibling distance=50mm}, level 3/.style={sibling distance=30mm}, level 4/.style={sibling distance=12mm}, scale=1, level 5/.style={sibling distance=6mm}, scale=1]
@@ -146,6 +152,7 @@ Gehen Sie dafür folgendermaßen vor:\\
 
 \end{enumerate}
 
+\pagebreak
 \section*{Aufgabe 6: Graphen (12 Punkte)}
 \begin{enumerate}[(1)]
 \item Ein Graph G = (V,E) sei durch die folgende Adjazenzfelddarstellung gegeben:\\
@@ -167,12 +174,12 @@ E := \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 	\item Welche dritte Möglichkeit zur Darstellung von Graphen wurde in der Vorlesung vorgestellt? Beschreiben Sie sie kurz und nennen Sie sowohl einen Vor- als auch einen Nachteil dieser Methode. (2P)
 \end{enumerate} 
 
-\item Wenden Sie den Algorithmus von Prim auf dem folgenden Graphen an. Der Startknoten sei a. Markieren Sie die Kanten des resultierenden MSTs eindeutig (z.B. durch dicke Linien) und geben Sie die Reihenfolge der hinzugefügten Kanten an. (2P)
+\item Wenden Sie den Algorithmus von Prim auf dem folgenden Graphen an. Der Startknoten sei \textbf{a}. Markieren Sie die Kanten des resultierenden MSTs eindeutig (z.B. durch dicke Linien) und geben Sie die Reihenfolge der hinzugefügten Kanten an. (2P)
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.66\textwidth]{mst_graph.png}
 \end{figure}
-
+\pagebreak
 \item Gegeben sei folgender Graph:\\
 \ \\
 \begin{center}
@@ -181,9 +188,9 @@ E := \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 Führen Sie auf diesem Graphen eine Tiefensuche aus und gehen Sie dabei wie folgt vor:
 \begin{itemize}
 	\item Beginnen Sie bei Knoten A.
-	\item Die Betrachtung der ausgehenden Kanten eines Knotens soll im Uhrzeigersinn erfolgen
+	\item Betrachten Sie die ausgehenden Kanten eines Knotens bei der Suche jeweils im Uhrzeigersinn.
 	\item Schreiben Sie die \textit{discovered}-Zeiten der Knoten links neben die Doppelpunkte, die \textit{finalized}-Zeiten jeweils rechts daneben.
-	\item Klassifzieren Sie die Kanten:
+	\item Klassifzieren Sie die Kanten. Kennzeichnen Sie dabei:
 	\begin{itemize}
 		\item jede \textit{Baumkante} durch eine dicke Linie
 		\item jede \textit{Rückwärtskante} mit einem ''B''
