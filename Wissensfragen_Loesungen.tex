@@ -28,5 +28,12 @@
 \item Stabilität bedeutet, dass sich die Reihenfolge von gleichen Elementen beim Sortieren nicht ändern. Anwenden lässt sich diese z.B. bei Tupeln, die lexikographisch geordnet werden (d.h. zuerst nach dem ersten Wert, bei Gleichheit nach dem zweiten). Ein Beispiel hierfür wären Tupel der Form (Monat, Tag) für einen Tag innerhalb eines Jahres. Man sortiert dabei zuerst nach dem zweiten Wert und danach mit einem stabilen Sortieralgorithmus nach dem ersten Wert. Bei Tupeln mit gleicher erster Komponente wird dann nämlich die ursprüngliche Reihenfolge beibehalten, welche durch Sortieren nach der zweiten Komponente erreicht wurde.
 
 \item Die Anzahl der Hashtabellenslots muss mindestens proportional zur Anzahl der gespeicherten Elemente sein, d.h. im Durchschnitt darf höchstens 1 Element pro Slot gespeichert sein.
+
+\item \begin{enumerate}[(a)]
+\item Amortisierte Analyse ist eine Art, die Laufzeit einer Operation zu bestimmen. Es wird der Durchschnitt der Laufzeit über eine (Worst-Case-)Folge von Operationen gebildet. Dabei wird ausgenutzt, dass ein Worst Case zwar eine längere Laufzeit hat, aber so selten auftreten kann, dass er den Durchschnitt praktisch nicht verändert.
+\item Einfügen bzw. Löschen in unbeschränkten Feldern. Worst Case: $\Theta(n)$, Amortisierte Analyse: $\Theta(1)$.
+\item Gemeinsamkeit: Durchschnittsbildung der Laufzeit über mehrere Operationen\newline
+Unterschiede: Amortisierte Analyse ist trotzdem eine Worst-Case-Betrachtung und kein Avereage Case; amortisierte Analyse betrachtet Folgen von Operationen, Average-Case-Analyse jedoch unabhängige Operationen
+\end{enumerate}
 \end{enumerate}
 \end{document}
