@@ -5,6 +5,17 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{enumerate}
+
+\usepackage{tikz}
+
+\definecolor{darkred}{rgb}{0.53,0,.08}
+
+\tikzstyle{rvertex}=[circle,fill=white,minimum size=23pt, inner sep=0pt, text=black, line width=1pt, draw=darkred, font=\Large]
+\tikzstyle{bvertex}=[circle,fill=black,minimum size=23pt, inner sep=0pt, text=white, line width=1pt, draw=black, font=\Large]
+\tikzstyle{nilvertex}=[rectangle,fill=black,minimum size=12pt, inner sep=0pt, text=white, line width=1pt, draw=black, text width=0.2cm, font=\scriptsize, align=center]
+\tikzstyle{niceedge}=[draw, very thick, ->, gray]
+\newcommand{\nil}{N\newline I\newline L}
+
 \newcommand{\rbt}{Rot-Schwarz-Baum }
 
 
@@ -95,6 +106,45 @@ Gehen Sie dafür folgendermaßen vor:\\
 	\item Stellen Sie mit einer Skizze dar, wie die beiden Zeiger in der Liste positioniert werden müssen.
 	\item Geben Sie den Pseudocode für beide Warteschlangenoperationen an. Stellen  Sie dabei sicher, dass Ihre Implementierung auch korrekt mit einer leeren Warteschlange umgehen kann.
 \end{itemize}
+
+\item Löschen Sie in folgendem Rot-Schwarz-Baum die 17 und zeichenen Sie den reparierten Baum.
+
+\begin{center}
+\begin{tikzpicture}[level 1/.style={level distance = 1.2cm}, level 2/.style={sibling distance=50mm}, level 3/.style={sibling distance=30mm}, level 4/.style={sibling distance=12mm}, scale=1, level 5/.style={sibling distance=6mm}, scale=1]
+   \node {}
+    child {node [bvertex] {13} edge from parent[niceedge]
+     child {node [rvertex] {8}
+      child {node [bvertex]  {1}
+      	child {node [nilvertex] {\nil}}
+      	child {node [rvertex] {6}
+	 child {node [nilvertex] {\nil}}
+      	 child {node [nilvertex] {\nil}}
+	}
+      }
+      child {node [bvertex]  {11}
+      	child {node [nilvertex] {\nil}}
+      	child {node [nilvertex] {\nil}}
+      } 
+    }
+    child {node [rvertex] {17}
+     child {node [bvertex] {15}
+      child {node [nilvertex] {\nil}}
+      child {node [nilvertex] {\nil}}
+     }
+     child {node [bvertex] {25}
+      child {node [rvertex] {22}
+       child {node [nilvertex] {\nil}}
+       child {node [nilvertex] {\nil}}
+      }
+      child {node [rvertex] {27}
+       child {node [nilvertex] {\nil}}
+       child {node [nilvertex] {\nil}}
+      }
+     }
+    }
+   };
+\end{tikzpicture}
+\end{center}
 
 \end{enumerate}
 \end{document}
