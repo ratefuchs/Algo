@@ -1,0 +1,100 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\newcommand{\rbt}{Rot-Schwarz-Baum }
+
+
+\begin{document}
+\section*{Aufgabe 1: Wissensfragen}
+\begin{enumerate}[(1)]
+\item Nennen Sie zwei in der Vorlesung vorgestellte Algorithmen, die nach dem Greedy-Prinzip arbeiten. Begründen Sie kurz, warum.
+
+\item Nennen Sie einen Vorteil und einen Nachteil von Mergesort gegenüber Quicksort.
+
+\item Was bedeutet Stabilität bei Sortieralgorithmen? Nennen Sie eine Situation, in der man die Stabilität ausnutzen kann.
+
+\item Bin\"are Suche hat auf jeder Datenstruktur eine bessere Laufzeit als Lineare Suche - Beweisen oder widerlegen sie diese Aussage.
+
+\item Beweisen oder widerlegen Sie: Der Spannbaum mit dem zweitniedrigsten Gewicht eines Graphen ist eindeutig. 
+\end{enumerate}
+
+\section*{Aufgabe 2: Heaps}
+\begin{enumerate}[(1)]
+\item Gegeben sei das folgende Feld: \\
+\ \\
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+12 & 21 & 19 & 26 & 99 & 30 & 24 & 32 & 18 & 101 & 128 \\ 
+\hline 
+\end{tabular} \\
+\begin{enumerate}[(a)]
+	\item Erläutern Sie, warum das Feld keinen gültigen Min-Heap darstellt.
+	\item Reparieren Sie den Min-Heap mit dem aus der Vorlesung bekannten Verfahren. Geben Sie dabei den Heap nach jeder Änderung an (als Feld oder als Baum).
+\end{enumerate}
+\item Gegeben sei ein Datentyp, dessen Elemente bez\"uglich < bzw. > vergleichbar sind. Im folgenden betrachten wir Datenstrukturen f\"ur Elemente dieses Typs.
+\begin{enumerate}[(a)]
+	\item Warum l\"asst sich in einem Heap das Minimum nicht in $\Theta(1)$ entfernen, sodass die entstehende Struktur immer noch ein Heap ist? \newline
+Hinweis: Betrachten Sie die Laufzeit einer Heapsort-Implementierung, wenn dies möglich wäre. Welcher Widerspruch ergibt sich daraus?
+
+	\item Geben Sie eine Datenstruktur an, die die entsprechende Eigenschaft aus (a) hat.
+
+	\item Warum ist dies kein Widerspruch zur \"Uberlegung aus (a)?
+\end{enumerate}
+\end{enumerate}
+
+
+\section*{Aufgabe 3: Sortieren}
+\begin{enumerate}[(1)]
+\item Gegebenen sei der Sortieralgorithmus \emph{Cocktail-Sort}. Um ein Array zu sortieren, durchschreitet der Algorithmus den Array zun\"achst von vorne nach hinten und vertauscht dabei zwei benachbarte Werte, wenn sie in der falschen Reihenfolge stehen. Ist der Algorithmus am Ende des Arrays angekommen, durchschreitet er das Array jetzt in umgekehrter Reihenfolge von hinten nach vorne (also \glqq zur\"uck\grqq).
+\begin{enumerate}[(a)]
+\item Wenden Sie Cocktail-Sort auf folgendes Array an. Geben Sie dabei das Array nach jedem Schritt an. \\
+\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+4 & 2 & 1 & 3 & 7 & 3 \\
+\hline
+\end{tabular}
+\end{center}
+\text{ } \\
+\item Geben Sie eine naive Implementierung von \emph{Cocktail-Sort} in Pseudocode an.
+\item Geben Sie eine \emph{Familie} von Zahlenarrays an, die von Bubblesort in $O(n^2)$ sortiert werden, aber von Cocktail-Sort in $O(n)$.
+\end{enumerate}
+\end{enumerate}
+
+\section*{Aufgabe 4: Dynamische Programmierung}
+\begin{enumerate}[(1)]
+
+\item Was ist die grundlegende Idee hinter der Methode der dynamischen Programmierung?
+
+\item Die Fakultätsfunktion $n!$ lässt sich folgendermaßen rekursiv definieren: \newline
+$0! = 1$\newline
+$n! = n\cdot(n-1)!$ 	für $n \geq 1$
+\begin{enumerate}[(a)]
+\item Geben Sie ein Programm in Pseudocode an, welches $n!$  mittels dynamischer Programmierung und Bottom-Up-Ansatz berechnet.
+\item Das Programm soll nun so modifiziert werden, dass es nach einmaligem Berechnen von $n!$ jeden Aufruf $k!$ mit $k \leq n$ in $O(1)$ bearbeiten kann. Beschreiben Sie eine Möglichkeit dafür.
+\end{enumerate}
+\end{enumerate}
+
+\section*{Aufgabe 5: Datenstrukturen}
+\begin{enumerate}[(1)]
+\item Für die folgenden Anwendungsfälle soll jeweils eine geeignete Datenstruktur ausgewählt werden. Geben Sie jeweils eine passende Datenstruktur an und begründen Sie Ihre Wahl:
+\begin{enumerate}[(a)]
+\item In einer Musiksammlung sollen häufig neue Musikstücke hinzugefügt, gelöscht und gesucht werden. Über die zukünftige Größe der Sammlung kann beim Anlegen noch keine Aussage gemacht werden.
+\item An einen Datenbankserver werden zu manchen Zeitpunkten so viele Anfragen geschickt, dass er sie nicht sofort bearbeiten kann. Daher soll er die Möglichkeit bekommen, die Anfragen zwischenspeichern zu können, bis er wieder genügend freie Ressourcen besitzt.
+\item Ein Prozess-Scheduler in einem Betriebssystem arbeitet mit unterschiedlich hohen Prioritäten. Bei jedem Aufruf soll jeweils der Prozess mit der höchsten Priorität ausgeführt werden, wobei die Auswahlgeschwindigkeit für die Leistungsfähigkeit des Betriebssystems eine entscheidende Rolle spielt.
+\end{enumerate}
+
+\item Zeigen Sie, wie eine Warteschlange mit einer \textbf{einfach verketteten} Liste sowie zwei Zeigern \textit{K} (ältestes Element) und \textit{E} (neuestes Element) implementiert werden kann. Hierbei sollen sowohl ENQUEUE(X) als auch DEQUEUE() die Laufzeit O(1) besitzen.\\
+Gehen Sie dafür folgendermaßen vor:\\
+\begin{itemize}
+	\item Stellen Sie mit einer Skizze dar, wie die beiden Zeiger in der Liste positioniert werden müssen.
+	\item Geben Sie den Pseudocode für beide Warteschlangenoperationen an. Stellen  Sie dabei sicher, dass Ihre Implementierung auch korrekt mit einer leeren Warteschlange umgehen kann.
+\end{itemize}
+
+\end{enumerate}
+\end{document}
