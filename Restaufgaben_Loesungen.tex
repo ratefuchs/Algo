@@ -1,0 +1,102 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\newcommand{\rbt}{Rot-Schwarz-Baum }
+
+
+\begin{document}
+\section*{Übriggebliebene Aufgaben: Lösungen}
+\begin{enumerate}[(1)]
+
+\item \begin{verbatim}BINOMIAL(n, k)
+//sei b[0..n][0..k] ein neues Feld
+for i = 0 to n
+    for j = 0 to k
+        if (j > i)
+            b[i][j] = 0;
+        else if (j == 0 or i == j)
+            b[i][j] = 1;
+        else
+            b[i][j] = b[i – 1][k – 1] + b[i – 1][k];
+return b[n][k];
+\end{verbatim}
+
+\item Gegenbeispiel: Knoten $1,2,3,4$ und folgende Kanten mit Gewichten: $c(\{1,2\})=1$, $c(\{2,3\})=1$, $c(\{3,4\})=1$ und $c({1,4})=2$.
+Bilde den k\"urzeste-Wege-Baum von $1$ aus. Benutzte Kanten: $\{1,2\}, \{2,3\}, \{1,4\}$ mit Gewicht 4.
+Der minimale Spannbaum besteht aus den drei Kanten mit Gewicht 1 (Gesamtgewicht 3).
+
+\item \begin{enumerate}[(a)]
+\item Knoten $1,2,3$ und folgende Kanten mit Gewichten: $c(\{1,2\})=3$, $c(\{2,3\})=-2$, und $c(\{1,3\})=2$. Startknoten sei Knoten $1$.
+\item Knoten $1,2,3$ und folgende Kanten mit Gewichten: $c(\{1,2\})=1$, $c(\{2,3\})=-1$, und $c(\{1,3\})=9$. Startknoten sei wieder Knoten $1$.
+\item bei ungerichteten Graphen gilt: negative Kante = negativer Kreis (Kante beliebig oft vor und zur\"uck).
+\end{enumerate}
+
+\item \begin{enumerate}[(a)]
+\item Es ist $a=1$, $b=2$, $f(n)=n$ und $\log_b a=\log_2 1=0$. Daher ist $f(n)=n\in \Omega(n^{0+0,5})$ mit $\varepsilon = 0,5$ und $a\cdot f(\frac{n}{b})=\frac{n}{2}\leq \frac{1}{2}\cdot n = c\cdot f(n)$ mit $c=\frac{1}{2}$. Also ist Fall 3 des Mastertheorems anwendbar, es folgt $T(n)\in\Theta(n)$.
+\item Es ist $a=2$, $b=2$, $f(n)=1$ und $\log_b a=\log_2 2=1$. Daher ist $f(n)=1\in O(n^{1-0,5})$ mit $\varepsilon=0,5$. Also ist Fall 1 des Mastertheorems anwendbar, es folgt $T(n)\in\Theta(n)$.
+\item Es ist $a=1$, $b=2$, $f(n)=1$ und $\log_b a=\log_2 1=0$. Daher ist $f(n)=1\in \Theta(n^0)=\Theta(1)$. Also ist Fall 2 des Mastertheorems anwendbar, es folgt $T(n)\in\Theta(\log n)$.
+\end{enumerate}
+
+\item \begin{enumerate}[(a)]
+\item Es ist $a=1$, $b=2$, $f(n)=\log(n)$ und $\log_b a=\log_2 1=0$. Nun ist einerseits $\log(n)\notin O(1)$, also sind die F\"alle 1 und 2 nicht anwendbar. Es gilt zwar $\log(n)\in\omega(1)$, aber es existiert kein $\varepsilon >0$ mit $\log(n)\in\Omega(n^{0+\varepsilon})$, also ist es auch nicht Fall 3.
+\item Diese Gleichung hat nicht die Form des Mastertheorems, dort ist $a$ eine Konstante.
+\item Es gilt $a=1$, $b=2$, $f(n)=n\cdot (2-\cos(n))$ und $\log_b a=\log_2 1=0$. Da $n\leq n\cdot (2-\cos(n))\leq 3n$, ist $n\cdot (2-\cos(n))\in \Omega(n^{0+0,5})$, was Fall 1 und Fall 2 ausschlie"st, aber die erste Bedingung von Fall 3 erf\"ullt. Die Regularit\"atsbedingung $a\cdot f(\frac{n}{b})\leq c\cdot f(n)$ f\"ur ein $c\in[0,1)$ ist aber verletzt. Dies soll hier nur veranschaulicht werden (und nicht exakt bewiesen). W\"ahle $n=2(2k+1)\pi$ mit $k\in\mathbb{N}$ (allerdings keine ganze Zahl).
+$$f(n)=2(2k+1)\pi\cdot(2-\cos(2(2k+1)\pi))=2(2k+1)\pi\cdot(2-1)=2(2k+1)\pi$$
+$$f(\frac{n}{2})=(2k+1)\pi\cdot(2-\cos((2k+1)\pi))=(2k+1)\pi\cdot(2+1)=3(2k+1)\pi=\frac{3}{2}f(n)$$
+Wenn $n$ nahe genug bei einer nat\"urlichen Zahl liegt, wird die Regularit\"atsbedingung auch durch diese verletzt.
+\item Diese Gleichung ist \"uberhaupt nicht l\"osbar, denn $T(n)=T(n)+1\Rightarrow 0=1$: Widerspruch!
+\end{enumerate}
+
+\item \begin{enumerate}[(a)]
+\item Falsch! W\"ahle $f(n)=n, g(n)=2n, h(n)=j(n)=2^n$.
+\item Wahr! Wegen $f\in\Theta(g)$ und $h\in\Theta(j)$ folgt: $\exists a,b\in \mathbb{R}^+, N\in\mathbb{N}$ mit $f(n)\leq a\cdot g(n)$ und $h(n)\leq b\cdot j(n)$ f\"ur $n\geq N$. Nun gilt:
+$$\underbrace{f(n)}_{\geq 0}\cdot\underbrace{h(n)}_{\geq 0}\leq \underbrace{a\cdot b}_{:=c}\cdot g(n)\cdot j(n)\qquad (n\geq N)$$
+Der Beweis f\"ur die andere Ungleichung l\"auft analog.
+\item Falsch! W\"ahle $f(n)=g(n)=h(n)=n, j(n)\equiv 1$.
+\item Falsch! W\"ahle $f(n)=2^n, g(n)=4^n, h(n)=\lfloor \log_2 n\rfloor$.\newline
+Alternative L\"osung: $h(n)\equiv 1$.
+\item Falsch! W\"ahle $f(n)=2n, g(n)=n, h(n)=2^n$.
+\item Wahr! Wegen $f\in o(g)$ folgt: $\forall a\in\mathbb{R}^+\exists N\in\mathbb{N}: f(n)<a\cdot g(n)$. W\"ahle $a=1\Rightarrow \exists N\in \mathbb{N}:f(n)<g(n)$. Nun gilt aber, da $h$ monoton wachsend:
+$$h(f(n))\leq h(g(n))=1\cdot h(g(n))\qquad (n\geq N)$$
+\item Wahr! $\forall n\in \mathbb{N}_0: n^2\geq n$. Da $f(n)\in\mathbb{N}_0$, folgt automatisch $f(n)\leq (f(n))^2=1\cdot (f(n))^2$.
+\item Falsch! W\"ahle $f(n)\equiv 1$.
+\item Falsch! W\"ahle $f(n)=n$.
+\end{enumerate}
+
+\item \begin{verbatim}
+bh(x,T)
+if x = T.wurzel
+    return 0
+else
+    return (x.farbe == schwarz ? 1 : 0) + bh(x.vater, T)
+\end{verbatim}
+
+\item L\"osungsskizze: pr\"ufe zuerst, ob Wurzel schwarz. Gehe nun rekursiv bis zu den Bl\"attern. Auf dem Weg dorthin k\"onnen die Eigenschaften "`Jeder Knoten ist entweder rot oder schwarz"' und "`Ein roter Knoten hat schwarze Kinder"' \"uberpr\"uft werden. In den Bl\"attern angekommen, wird getestet ob diese schwarz sind. F\"ur die Schwarz-H\"ohe wird (1) verwendet.
+
+\item \begin{enumerate}[(a)]
+\item Schwarzh\"ohe des Baums ist minimal $\lceil\frac{h}{2}\rceil$ und maximal $h$. Die minimal m\"ogliche H\"ohe von Knoten ist damit $\lceil\frac{h}{2}\rceil$. Die Differenz ist also $h-\lceil\frac{h}{2}\rceil=\lfloor\frac{h}{2}\rfloor$.
+\item Die L\"osung ist ein Baum mit genau einem roten Knoten (nicht an der Wurzel).
+\end{enumerate}
+
+\item \begin{enumerate}[(a)]
+\item Blatt-Knoten unter dem roten Knoten haben die H\"ohe $h$. Der Unterbaum des roten Knotens ist vollst\"andig und hat die H\"ohe $h-d$. Andere Blatt-Knoten haben kleinere H\"ohe $\Rightarrow a(h)=2^{h-d}$.\newline
+Auf der H\"ohe $d$ gibt es $2^d$ Knoten, davon $2^d-1$ schwarze. Die entsprechende Blatt-Knoten haben H\"ohe $h$, die Unterb\"aume haben also die H\"ohe $h-d-1 \Rightarrow a(h-1)=(2^d-1)\cdot 2^{h-d-1}$.\newline
+F\"ur alle anderen $n$ ist $a(n) =0$.
+\item $a(h)=2^{h-d}\stackrel{!}{=}2^h\Rightarrow d=0$. Damit ist der rote Knoten die Wurzel. Diese muss aber schwarz sein.
+\end{enumerate}
+
+\item Die Anzahl der Hashtabellenslots muss mindestens proportional zur Anzahl der gespeicherten Elemente sein, d.h. im Durchschnitt darf höchstens 1 Element pro Slot gespeichert sein.
+
+\item \begin{enumerate}[(a)]
+\item Amortisierte Analyse ist eine Art, die Laufzeit einer Operation zu bestimmen. Es wird der Durchschnitt der Laufzeit über eine (Worst-Case-)Folge von Operationen gebildet. Dabei wird ausgenutzt, dass ein Worst Case zwar eine längere Laufzeit hat, aber so selten auftreten kann, dass er den Durchschnitt praktisch nicht verändert.
+\item Einfügen bzw. Löschen in unbeschränkten Feldern. Worst Case: $\Theta(n)$, Amortisierte Analyse: $\Theta(1)$.
+\item Gemeinsamkeit: Durchschnittsbildung der Laufzeit über mehrere Operationen\newline
+Unterschiede: Amortisierte Analyse ist trotzdem eine Worst-Case-Betrachtung und kein Avereage Case; amortisierte Analyse betrachtet Folgen von Operationen, Average-Case-Analyse jedoch unabhängige Operationen
+\end{enumerate}
+\end{enumerate}
+\end{document}

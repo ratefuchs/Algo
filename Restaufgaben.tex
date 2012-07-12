@@ -1,0 +1,84 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\newcommand{\rbt}{Rot-Schwarz-Baum }
+
+
+\begin{document}
+\section*{Übriggebliebene Aufgaben}
+\begin{enumerate}[(1)]
+
+\item Der Binomialkoeffizient $\binom{n}{k}$ kann folgendermaßen rekursiv berechnet werden:
+\begin{center}
+$\binom{n}{k}=\begin{cases}
+0, & \text{falls } k > n;\\
+1, & \text{falls } k=0 \text{ oder } n=k;\\
+\binom{n-1}{k-1} + \binom{n-1}{k}, & \text{sonst.}
+\end{cases}$
+\end{center}
+Geben Sie ein Programm in Pseudocode an, welches $\binom{n}{k}$ mittels dynamischer Programmierung und Bottom-Up-Ansatz berechnet. Hinweis: Verwenden Sie eine Matrix (d.h. ein 2-dimensionales Array), um die Lösungen der Teilprobleme zu speichern.
+\item Zeigen oder widerlegen Sie: Ein k\"urzester-Wege-Baum ist auch ein minimaler Spannbaum.
+
+\item \begin{enumerate}[(a)]
+\item Zeigen Sie: Dijkstra liefert bei negativen Kanten in gerichteten Graphen auch ohne negative Kreise im Allgemeinen ein falsches Ergebnis.
+\item Geben Sie einen stark zusammenh\"angenden, gerichteten Graphen mit mindestens einer negativen Kante an, so dass Dijkstra f\"ur mindestens einen Startknoten ein korrektes Ergebnis liefert.
+\item Warum funktioniert Dijkstra nicht auf zusammenh\"angenden, ungerichteten Graphen mit mindestens einer negativen Kante?
+\end{enumerate}
+
+\item L\"osen Sie folgende Rekurrenzgleichungen:
+\begin{enumerate}[(a)]
+\item $T(n)=T(\frac{n}{2})+n$
+\item $T(n)=2\cdot T(\frac{n}{2})+1$
+\item $T(n)=T(\frac{n}{2})+1$
+\end{enumerate}
+
+\item Warum l\"asst sich das Mastertheorem nicht auf folgende Gleichungen anwenden?
+\begin{enumerate}[(a)]
+\item $T(n)=T(\frac{n}{2})+\log(n)$
+\item $T(n)=n\cdot T(\frac{n}{2})+1$
+\item $T(n)=T(\frac{n}{2})+n\cdot(2-\cos(n))$
+\item $T(n)=T(n)+1$
+\end{enumerate}
+
+\item Seien $f,g,h,j: \mathbb{N}\to\mathbb{N}_0$ monoton wachsend. Zeigen oder widerlegen Sie:
+\begin{enumerate}[(a)]
+\item $f\in\Theta(g)$ und $h\in\Theta(j)\Rightarrow f\circ h \in \Theta(g\circ j)$
+\item $f\in\Theta(g)$ und $h\in\Theta(j)\Rightarrow f\cdot h \in \Theta(g\cdot j)$
+\item $f\in\Theta(g)$ und $h\in\omega(j)\Rightarrow f + h \in \Theta(g + j)$
+\item $f\in o(g)\Rightarrow h\circ f \in o(h\circ g)$
+\item $f\in O(g)\Rightarrow h\circ f \in O(h\circ g)$
+\item $f\in o(g)\Rightarrow h\circ f \in O(h\circ g)$
+\item $f\in O(f^2)$
+\item $f\in o(f^2)$
+\item $f\in \Theta(f^2)$
+\end{enumerate}
+
+\item Schreibe die Methode $bh(x,T)$, die f\"ur jeden Knoten $x$ seine Schwarzh\"ohe zur\"uckgibt.
+
+\item Schreibe eine Methode $check\_b\_r\_tree(T)$, die einen \rbt als Parameter nimmt und \"uberpr\"uft, ob dieser ein g\"ultiger \rbt ist.
+
+\item \begin{enumerate}[(a)]
+\item Ein \rbt habe die H\"ohe $h$. Berechne die maximale Differenz zwischen Entfernungen von der Wurzel zu den NIL-Knoten (mit kurzer Begr\"undung).
+\item Konstruiere einen solchen \rbt f\"ur $h=3$.
+\end{enumerate}
+
+\item \begin{enumerate}[(a)]
+\item Gegeben sei ein \rbt der H\"ohe $h$ mit genau einem roten Knoten. Dieser habe den Abstand $d$ von der Wurzel.
+Berechne f\"ur jedes $n\in \mathbb{N}$ die Anzahl $a(n)$ der NIL-Knoten, die den Abstand $n$ zur Wurzel haben.
+\item Ist es m\"oglich, dass $a(h)=2^h$? Begr\"unde!
+\end{enumerate}
+
+\item Was muss für eine Hashtabelle mit Verkettung gelten, damit der Aufwand für die Suche nach einem Element O(1) beträgt?
+
+\item \begin{enumerate}[(a)]
+\item Was bedeutet der Begriff \glqq amortisierte Analyse\grqq?
+\item Nennen Sie ein Beispiel für eine Operation, die in der amortisierten Analyse eine bessere Laufzeit hat als im Worst Case. Geben Sie zusätzlich die beiden Laufzeiten an. Eine Begründung ist nicht notwendig.
+\item Nennen Sie eine Gemeinsamkeit und einen Unterschied zwischen amortisierter Analyse und Average-Case-Laufzeit.
+\end{enumerate}
+\end{enumerate}
+\end{document}

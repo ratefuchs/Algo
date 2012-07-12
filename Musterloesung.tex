@@ -45,17 +45,17 @@
 \begin{itemize}
 \item[(+)] besseres Verhalten im Worst Case
 \item[(+)] stabil
-\item[(-)] im Durchschnitt eher langsamer als Quicksort
+\item[(-)] in der Regel langsamer als Quicksort
 \item[(-)] zusätzlicher Speicher benötigt (nicht in-place)
 \end{itemize}
 
 \item Was bedeutet Stabilität bei Sortieralgorithmen? Nennen Sie eine Situation, in der man die Stabilität ausnutzen kann. (2P)\\
 \textbf{Lösung:}\\
-Stabilität bedeutet, dass sich die Reihenfolge von gleichen Elementen beim Sortieren nicht ändern. Anwenden lässt sich diese z.B. bei Tupeln, die lexikographisch geordnet werden (d.h. zuerst nach dem ersten Wert, bei Gleichheit nach dem zweiten). Ein Beispiel hierfür wären Tupel der Form (Monat, Tag) für einen Tag innerhalb eines Jahres. Man sortiert dabei zuerst nach dem zweiten Wert und danach mit einem stabilen Sortieralgorithmus nach dem ersten Wert. Bei Tupeln mit gleicher erster Komponente wird dann nämlich die ursprüngliche Reihenfolge beibehalten, welche durch Sortieren nach der zweiten Komponente erreicht wurde.
+Stabilität bedeutet, dass sich die Reihenfolge von gleichen Elementen beim Sortieren nicht ändert. Anwenden lässt sich dies z.B. bei Tupeln, die lexikographisch geordnet werden (d.h. zuerst nach dem ersten Wert, bei Gleichheit nach dem zweiten). Ein Beispiel hierfür wären Tupel der Form (Monat, Tag) für einen Tag innerhalb eines Jahres. Man sortiert dabei zuerst nach dem zweiten Wert und danach mit einem stabilen Sortieralgorithmus nach dem ersten Wert. Bei Tupeln mit gleicher erster Komponente wird dann nämlich die ursprüngliche Reihenfolge beibehalten, welche durch Sortieren nach der zweiten Komponente erreicht wurde.
 
 \item Zeigen oder widerlegen Sie: Bin\"are Suche hat auf jeder Datenstruktur eine bessere Laufzeit als Lineare Suche. (2P)\\
 \textbf{Lösung:}\\
-Die Behauptung ist falsch! Beispielsweise bringt binäre Suche keinen Geschwindigkeitsvorteil bei einer verketteten Liste, da sie keinen wahlfreien Zugriff in O(1) erlaubt.
+Die Behauptung ist falsch! Beispielsweise bringt binäre Suche keinen Geschwindigkeitsvorteil bei einer verketteten Liste, da diese keinen wahlfreien Zugriff in O(1) erlaubt.
 \end{enumerate}
 
 \section*{Aufgabe 2: Heaps (12 Punkte)}
@@ -70,7 +70,7 @@ Die Behauptung ist falsch! Beispielsweise bringt binäre Suche keinen Geschwindi
 \begin{enumerate}[(a)]
 	\item Erläutern Sie, warum das Feld keinen gültigen Min-Heap darstellt. (1P)\\
 	\textbf{Lösung}:\\
-	Das Element mit dem Schlüssel 18 verletzt die Heap-Eigenschaft, da es kleiner als 26 und 21 ist, aber weiter unten als diese im Heap steht.
+	Das Element mit dem Schlüssel 18 verletzt die Heap-Eigenschaft, da es kleiner als 26 und 21 ist, aber weiter unten als diese im gleichen Ast des Heaps steht.
 	
 	\item Reparieren Sie den Min-Heap mit dem aus der Vorlesung bekannten Verfahren. Geben Sie dabei den Heap nach jeder Änderung an (als Feld oder als Baum). (3P)\\
 \textbf{Lösung:}\\
@@ -161,16 +161,17 @@ Der Heap l\"asst sich in $\Theta(n)$ aufbauen. Wenn das Extrahieren des Minimums
 01 \tab \textbf{do} \\
 02 \tab \tab vertauscht = \textbf{false};\\
 03 \tab \tab \textbf{for} i = 1 \textbf{to} A.länge - 1\\
-04 \tab \tab \tab \textbf{if} (A[i]) $>$ A[i + 1])\\
-05 \tab \tab \tab \tab \textbf{swap}(A[i], A[i + 1])\\
+04 \tab \tab \tab \textbf{if} A[i]) $>$ A[i + 1]\\
+05 \tab \tab \tab \tab \textbf{swap}(A[i], A[i + 1]);\\
 06 \tab \tab \tab \tab vertauscht = \textbf{true};\\
-07 \tab \tab \textbf{if} (vertauscht == \textbf{false})\\
+07 \tab \tab \textbf{if} vertauscht == \textbf{false}\\
 08 \tab \tab \tab \textbf{break};\\
-09 \tab \tab \textbf{for} i = A.länge - 1 \textbf{downto} 1\\
-10 \tab \tab \tab \textbf{if} (A[i] $>$ A[i + 1])\\
-11 \tab \tab \tab \tab \textbf{swap}(A[i], A[i + 1])\\
-12 \tab \tab \tab \tab vertauscht = \textbf{true};\\
-13 \tab \textbf{while} (vertauscht == \textbf{true});
+09 \tab \tab vertauscht = \textbf{false};\\
+10 \tab \tab \textbf{for} i = A.länge - 1 \textbf{downto} 1\\
+11 \tab \tab \tab \textbf{if} A[i] $>$ A[i + 1]\\
+12 \tab \tab \tab \tab \textbf{swap}(A[i], A[i + 1]);\\
+13 \tab \tab \tab \tab vertauscht = \textbf{true};\\
+14 \tab \textbf{while} vertauscht == \textbf{true};
 \item Geben Sie eine \emph{Familie} von Zahlenarrays an, die von Bubblesort in $O(n^2)$ sortiert werden, aber von Cocktail-Sort in $O(n)$. (3P)\\
 \textbf{Lösung:}\\
 Beispielsweise die Arrays, die bereits sortiert sind bis auf das kleinste Element, welches ganz rechts steht:
@@ -198,13 +199,12 @@ $n! = n\cdot(n-1)!$ 	für $n \geq 1$
 \begin{enumerate}[(a)]
 \item Geben Sie ein Programm in Pseudocode an, welches $n!$  mittels dynamischer Programmierung und Bottom-Up-Ansatz berechnet. (3P)\\
 \textbf{Lösung:}\\
-\begin{verbatim}FACTORIAL(n)
-//sei f[0..n] ein neues Feld
-f[0] = 0;
-for i = 1 to n
-    f[i] = f[i – 1] * i;
-return f[n];
-\end{verbatim}
+\textit{FACTORIAL}(n)\\
+01 \tab //sei f[0..n] ein neues Feld\\
+02 \tab f[0] = 1;\\
+03 \tab \textbf{for} i = 1 \textbf{to} n\\
+04 \tab \tab f[i] = f[i – 1] * i;\\
+05 \tab \textbf{return} f[n];\\
 \item Das Programm soll nun so modifiziert werden, dass es nach einmaligem Berechnen von $n!$ jeden Aufruf $k!$ mit $k \leq n$ in $O(1)$ bearbeiten kann. Beschreiben Sie eine Möglichkeit dafür. (1P)\\
 \textbf{Lösung:}\\
 Da das dynamische Programm während der Bearbeitung alle Zwischenergebnisse $k!\quad (k \leq n)$ bereits in der Tabelle f speichert, muss nur dafür gesorgt werden, dass diese auch nach dem Ablauf der Methode erhalten bleibt. In jedem weiteren Aufruf für $k!\quad (k \leq n)$ kann nun durch einfaches Auslesen des Werts f[k] das Ergebnis geliefert werden.
@@ -222,7 +222,7 @@ Da das dynamische Programm während der Bearbeitung alle Zwischenergebnisse $k!\
 Hashtabelle mit Verkettung - Operationen laufen bei hinreichender Größe des Feldes in $O(1)$, Speicherplatz ist nicht beschränkt (außer durch Größe des Speichermediums).
 \item An einen Datenbankserver werden zu manchen Zeitpunkten so viele Anfragen geschickt, dass er sie nicht sofort bearbeiten kann. Daher soll er die Möglichkeit bekommen, die Anfragen zwischenspeichern zu können, bis er wieder genügend freie Ressourcen besitzt. (1P)\\
 \textbf{Lösung:}\\
-Warteschlange (Queue) - durch die FiFo-Strategie ändert sich die Reihenfolge der Anfragen beim Puffern nicht, außerdem werden ENQUEUE und DEQUEUE in jeweils konstantem Zeitaufwand ausgeführt.
+Warteschlange (Queue) - durch die FIFO-Strategie ändert sich die Reihenfolge der Anfragen beim Puffern nicht, außerdem werden ENQUEUE und DEQUEUE in jeweils konstantem Zeitaufwand ausgeführt.
 \item Ein Prozess-Scheduler in einem Betriebssystem arbeitet mit unterschiedlich hohen Prioritäten. Bei jedem Aufruf soll jeweils der Prozess mit der höchsten Priorität ausgeführt werden, wobei die Auswahlgeschwindigkeit für die Leistungsfähigkeit des Betriebssystems eine entscheidende Rolle spielt. (1P)\\
 \textbf{Lösung}:\\
 Max-Heap, da hier sowohl die Auswahl des Elements mit dem größten Schlüssel als auch das Einfügen neuer Prozesse hier besonders schnell ($O(log(n)$) erfolgen kann. 
@@ -299,14 +299,14 @@ Gehen Sie dafür folgendermaßen vor:\\
 Knoten 17 ist kein Blattknoten, kann also nicht direkt entfernt werden.
 Er muss also zuerst mit einem Blattknoten getauscht werden. Dabei stehen zwei Kandidaten zur Auswahl:
 Die 15 und die 22. Es ist offensichtlich einfacher, die 22 zu tauschen, denn rote Knoten sind unproblematisch.
-Man tauscht also die 17 mit der 22 und entfernt die 17 anschließend. Dann ist man sofort fertig.\\
+Man tauscht also die 17 mit der 22 und entfernt die 17 anschließend. Dann ist man sofort fertig.
+\pagebreak
+
 Für Gourmets: \textit{(die unbedingt die 15 tauschen wollen)}\\
 Nach dem Tauschen und Entfernen des Knotens ist das linke NIL-Element (unter der 15) der Knoten x. Der Bruder ist also die 25, die selber schwarz ist und zwei rote Kinder hat.
-Laut Vorlesungsfolien tritt also Fall 4 auf. Es muss rotiert werden (nach links um die 15) und umgefärbt. Damit ist die Reparatur abgeschlossen.
-
+Laut Vorlesungsfolien tritt also Fall 4 auf. Es muss rotiert (nach links um die 15) und umgefärbt werden (25 rot, 27 schwarz, 15 schwarz). Damit ist die Reparatur abgeschlossen.
 \end{enumerate}
 
-\pagebreak
 \section*{Aufgabe 6: Graphen (12 Punkte)}
 \begin{enumerate}[(1)]
 \item Ein Graph G = (V,E) sei durch die folgende Adjazenzfelddarstellung gegeben:\\
@@ -348,7 +348,9 @@ E := \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.66\textwidth]{mst_graph.png}
-\end{figure}\\
+\end{figure}
+\pagebreak
+
 \textbf{Lösung:}\\
 \begin{figure}[h]
 \centering
@@ -374,7 +376,9 @@ Führen Sie auf diesem Graphen eine Tiefensuche aus und gehen Sie dabei wie folg
 		\item jede \textit{Querkante} mit einem ''C''
 	\end{itemize} 
 \end{itemize}
-(5P)\\
+(5P)
+\pagebreak
+
 \textbf{Lösung:}\\
 \includegraphics[width=0.75\linewidth]{images/tiefensuche_loes}\\
 
