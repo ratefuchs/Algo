@@ -292,6 +292,16 @@ Gehen Sie dafür folgendermaßen vor:\\
 \end{tikzpicture}
 \end{center}
 
+\textbf{Lösung:} \\
+
+Knoten 17 ist kein Blattknoten, kann also nicht direkt entfernt werden.
+Er muss also zuerst mit einem Blattknoten getauscht werden. Dabei stehen zwei Kandidaten zur Auswahl:
+Die 15 und die 22. Es ist offensichtlich einfacher, die 22 zu tauschen, denn rote Knoten sind unproblematisch.
+Man tauscht also die 17 mit der 22 und entfernt die 17 anschließend. Dann ist man sofort fertig.\\
+Für Gourmets: \textit{(die unbedingt die 15 tauschen wollen)}\\
+Nach dem Tauschen und Entfernen des Knotens ist das linke NIL-Element (unter der 15) der Knoten x. Der Bruder ist also die 25, die selber schwarz ist und zwei rote Kinder hat.
+Laut Vorlesungsfolien tritt also Fall 4 auf. Es muss rotiert werden (nach links um die 15) und umgefärbt. Damit ist die Reparatur abgeschlossen.
+
 \end{enumerate}
 
 \pagebreak
