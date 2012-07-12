@@ -125,7 +125,7 @@ Der Heap l\"asst sich in $\Theta(n)$ aufbauen. Wenn das Extrahieren des Minimums
 \hline
 \end{tabular}
 \end{center}
-\text{ } \\
+\pagebreak
 \textbf{Lösung:}\\
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -184,7 +184,7 @@ Beispielsweise die Arrays, die bereits sortiert sind bis auf das kleinste Elemen
 \end{center}
 \end{enumerate}
 \end{enumerate}
-
+\pagebreak
 \section*{Aufgabe 4: Dynamische Programmierung (5 Punkte)}
 \begin{enumerate}[(1)]
 
@@ -215,7 +215,9 @@ Da das dynamische Programm während der Bearbeitung alle Zwischenergebnisse $k!\
 \begin{enumerate}[(1)]
 \item Für die folgenden Anwendungsfälle soll jeweils eine geeignete Datenstruktur ausgewählt werden. Geben Sie jeweils eine passende Datenstruktur an und begründen Sie Ihre Wahl:
 \begin{enumerate}[(a)]
-\item In einer Musiksammlung sollen häufig neue Musikstücke hinzugefügt, gelöscht und gesucht werden. Über die zukünftige Größe der Sammlung kann beim Anlegen noch keine Aussage gemacht werden. (1P)\\
+\item In einer Musiksammlung sollen häufig neue Musikstücke hinzugefügt, gelöscht und gesucht werden. Über die zukünftige Größe der Sammlung kann beim Anlegen noch keine Aussage gemacht werden. (1P)
+\pagebreak
+
 \textbf{Lösung:}\\
 Hashtabelle mit Verkettung - Operationen laufen bei hinreichender Größe des Feldes in $O(1)$, Speicherplatz ist nicht beschränkt (außer durch Größe des Speichermediums).
 \item An einen Datenbankserver werden zu manchen Zeitpunkten so viele Anfragen geschickt, dass er sie nicht sofort bearbeiten kann. Daher soll er die Möglichkeit bekommen, die Anfragen zwischenspeichern zu können, bis er wieder genügend freie Ressourcen besitzt. (1P)\\
@@ -342,7 +344,7 @@ E := \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 \centering
 \includegraphics[width=0.66\textwidth]{images/mst_loes.png}
 \end{figure}\\
-Reihenfolge der Kanten: (a, e); (e, h);
+Reihenfolge der Kanten: (a, e); (e, h); (e, b); (b, f); (f, j); (j, g); (g, d); (d, c); (f, i).
 \pagebreak
 \item Gegeben sei folgender Graph:\\
 \ \\
@@ -362,6 +364,9 @@ Führen Sie auf diesem Graphen eine Tiefensuche aus und gehen Sie dabei wie folg
 		\item jede \textit{Querkante} mit einem ''C''
 	\end{itemize} 
 \end{itemize}
-(5P)
+(5P)\\
+\textbf{Lösung:}\\
+\includegraphics[width=0.75\linewidth]{images/tiefensuche_loes}\\
+
 \end{enumerate}
 \end{document}
